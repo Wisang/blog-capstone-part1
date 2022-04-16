@@ -19,11 +19,11 @@ def get_blog():
 
 @app.route('/post/<int:index>')
 def get_post(index):
-    requested_post = None
-    for blog_post in post_list:
-        if blog_post.id == index:
-            requested_post = blog_post
-    return render_template("post.html", post=requested_post)
+    # requested_post = None
+    # for blog_post in post_list:
+    #     if blog_post.id == index:
+    #         requested_post = blog_post
+    return render_template("post.html", post=post_list[index-1])
 
 
 if __name__ == "__main__":
